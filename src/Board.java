@@ -280,7 +280,7 @@ public class Board extends JLabel implements ActionListener {
         public void keyReleased(KeyEvent e) {
             int key = e.getKeyCode();
             if (key == KeyEvent.VK_SPACE) {
-                System.out.println("released " );
+                System.out.println("released space");
                 timer.setDelay(DELAY);
             }
 

@@ -40,7 +40,7 @@ public class Board extends JLabel implements ActionListener {
     private final int RAND_POS = 10;
     private final int DELAY = 100;
     private final int DELAY_BOOST = 50;
-    private final int DELAY_SLOW = 500;
+    private final int DELAY_SLOWDOWN = 500;
  // private final int B_WIDTH = 1600;
  // private final int B_HEIGHT = 820;
 
@@ -49,10 +49,10 @@ public class Board extends JLabel implements ActionListener {
 
     private final int players[] = new int[20];
 
-    private int snake_size = 4;
+    private int snake_size = 2;
     private int apple_x;
     private int apple_y;
-    private int score_for_apple = 10;
+    private int score_for_apple = 1;
 
     private boolean leftDirection = false;
     private boolean rightDirection = false;
@@ -267,8 +267,8 @@ public class Board extends JLabel implements ActionListener {
                 leftDirection = false;
             }
 
-            if (key == KeyEvent.VK_SPACE) {
-                System.out.println("pressed: space");
+            if (key == KeyEvent.VK_Z) {
+                System.out.println("pressed: z");
                 timer.setDelay(DELAY_BOOST);
 
             }
@@ -277,15 +277,16 @@ public class Board extends JLabel implements ActionListener {
         @Override
         public void keyReleased(KeyEvent e) {
             int key = e.getKeyCode();
-            if (key == KeyEvent.VK_SPACE) {
-                System.out.println("released: space");
+            if (key == KeyEvent.VK_Z) {
+                System.out.println("released: z");
                 timer.setDelay(DELAY);
             }
 
-            if (key == KeyEvent.VK_SHIFT) {
-                System.out.println("released: alt");
-                timer.setDelay(DELAY_SLOW);
+            if (key == KeyEvent.VK_X) {
+                System.out.println("pressed: x");
+                timer.setDelay(DELAY_SLOWDOWN);
             }
         }
+       
     }
 }

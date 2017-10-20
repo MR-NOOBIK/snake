@@ -34,8 +34,8 @@ import javax.swing.Timer;
  */
 public class Board extends JLabel implements ActionListener {
 
-    private final int B_WIDTH = 1600;
-    private final int B_HEIGHT = 820;
+    private final int B_WIDTH = 600;
+    private final int B_HEIGHT = 500;
     private final int DOT_SIZE = 10;
     private final int ALL_DOTS = 50;
     private final int RAND_POS = 10;

@@ -27,7 +27,6 @@ import javax.swing.Timer;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author user
@@ -41,11 +40,13 @@ public class Board extends JLabel implements ActionListener {
     private final int RAND_POS = 10;
     private final int DELAY = 100;
     private final int DELAY_BOOST = 50;
+    private final int DELAY_SLOW = 500;
+ // private final int B_WIDTH = 1600;
+ // private final int B_HEIGHT = 820;
 
-    
     private final int x[] = new int[ALL_DOTS];
     private final int y[] = new int[ALL_DOTS];
-    
+
     private final int players[] = new int[20];
 
     private int snake_size = 4;
@@ -141,7 +142,7 @@ public class Board extends JLabel implements ActionListener {
 
     private void gameOver(Graphics g) {
 
-        String msg = "Конец";
+        String msg = "GAME OVER";
         Font small = new Font("Helvetica", Font.BOLD, 14);
         FontMetrics metr = getFontMetrics(small);
 
@@ -191,7 +192,6 @@ public class Board extends JLabel implements ActionListener {
 //                inGame = false;
 //            }
 //        }
-
         // check border collision
         if (y[0] >= B_HEIGHT) {
             inGame = false;
@@ -235,9 +235,7 @@ public class Board extends JLabel implements ActionListener {
 
         repaint();
     }
-     
-    
-    
+
     private class TAdapter extends KeyAdapter {
 
         @Override
@@ -268,24 +266,26 @@ public class Board extends JLabel implements ActionListener {
                 rightDirection = false;
                 leftDirection = false;
             }
-            
+
             if (key == KeyEvent.VK_SPACE) {
-                System.out.println("press: " );
+                System.out.println("pressed: space");
                 timer.setDelay(DELAY_BOOST);
-                
+
             }
         }
-        
+
         @Override
         public void keyReleased(KeyEvent e) {
             int key = e.getKeyCode();
             if (key == KeyEvent.VK_SPACE) {
-                System.out.println("released space");
+                System.out.println("released: space");
                 timer.setDelay(DELAY);
             }
 
+            if (key == KeyEvent.VK_ALT) {
+                System.out.println("released: alt");
+                timer.setDelay(DELAY_SLOW);
             }
-       }
-
+        }
     }
 }

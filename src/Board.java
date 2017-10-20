@@ -41,7 +41,7 @@ public class Board extends JLabel implements ActionListener {
     private final int RAND_POS = 10;
     private final int DELAY = 100;
     private final int DELAY_BOOST = 50;
-    
+
     
     private final int x[] = new int[ALL_DOTS];
     private final int y[] = new int[ALL_DOTS];
@@ -284,7 +284,8 @@ public class Board extends JLabel implements ActionListener {
                 timer.setDelay(DELAY);
             }
 
-        }
-    }
+            }
+       }
 
+    }
 }

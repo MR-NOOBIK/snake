@@ -282,7 +282,7 @@ public class Board extends JLabel implements ActionListener {
                 timer.setDelay(DELAY);
             }
 
-            if (key == KeyEvent.VK_ALT) {
+            if (key == KeyEvent.VK_SHIFT) {
                 System.out.println("released: alt");
                 timer.setDelay(DELAY_SLOW);
             }

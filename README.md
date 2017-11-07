@@ -1,2 +1,2 @@
-
-# open program with netbeans.
+# instruction:
+open program with netbeans.
